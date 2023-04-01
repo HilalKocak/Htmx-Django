@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 # Create your models here.
 
 #User
@@ -11,12 +11,12 @@ class DataFile(models.Model):
     user=models.ForeignKey('User', on_delete=models.CASCADE)
     workingfile = models.FileField(upload_to='data_files')
     date_created = models.DateTimeField(auto_now_add=True)
-    dashboard = models.ForeignKey('Dashboard')
+    dashboard = models.ForeignKey('Dashboard', on_delete=models.CASCADE)
 
 # dashboards
 class Dashboard(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE)
-    title = models.CharField(max_length=100, unique=True)
+    title = models.CharField(max_length=100)
 
     class Meta:
         unique_together = ('user',
