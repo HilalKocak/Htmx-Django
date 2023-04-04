@@ -3,7 +3,7 @@
         {% csrf_token %} 
         {{ form.as_p }}
          <button type="submit"
-         hx-post="{% url 'charts:upload' pk %}"
+         hx-post="{% url 'charts:upload_view' pk %}"
          >upload</button>
     </form>
 </div>

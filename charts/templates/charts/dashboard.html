@@ -5,8 +5,10 @@
 
 <h1>{{ dashboard.title }}</h1>
 <p> If you are ready to start creating interactive chats then add a data</p>
-<a href="{% url 'charts:upload_view' pk %}">ADD DATA</a>
-
+<a href="" hx-get="{% url 'charts:upload_view' pk %}"
+hx-target="#upload"
+>ADD DATA</a>
+<!-- deleted this from href and added hx-get-->
 <div id="upload">
 
 </div>

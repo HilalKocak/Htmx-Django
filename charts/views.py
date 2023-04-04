@@ -45,7 +45,7 @@ def upload_view(request, pk):
             datafile.workingfile = request.FILES['workingfile']
             datafile.save()
            
-            redirect('charts:dashboard', pk)
+            return redirect('charts:dashboard', pk)
     context=dict(
         form = form,
         pk=pk,
