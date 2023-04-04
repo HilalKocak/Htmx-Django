@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<p>welcome to dashboard</p>
+
+<h1>{{ dashboard.title }}</h1>
+<p> If you are ready to start creating interactive chats then add a data</p>
+<a href="{% url 'charts:upload_view' pk %}">ADD DATA</a>
+
+<div id="upload">
+
+</div>
+{% endblock content %}

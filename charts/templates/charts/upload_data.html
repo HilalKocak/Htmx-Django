@@ -1,0 +1,9 @@
+<div>
+    <form hx-encoding="multipart/form-data" hx-target="#upload" hx-swap="innerHTML">
+        {% csrf_token %} 
+        {{ form.as_p }}
+         <button type="submit"
+         hx-post="{% url 'charts:upload' pk %}"
+         >upload</button>
+    </form>
+</div>

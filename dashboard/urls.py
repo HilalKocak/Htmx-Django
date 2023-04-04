@@ -19,7 +19,7 @@ from charts.views import create_dashboard, home
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("dashboard/", include('charts.urls')),
+    path("dashboard/", include('charts.urls', namespace='charts')),
     path("", home, name='home'),
     path("create_dashboard/", create_dashboard, name='create-dashboard'),
 ]
